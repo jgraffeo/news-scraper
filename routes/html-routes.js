@@ -1,15 +1,14 @@
-var express = require("express");
-var exphbs = require("express-handlebars");
+const express = require("express");
+const exphbs = require("express-handlebars");
+const router = express.Router();
 
-//initialize express
-var app = express();
 
-app.get("/", (req, res) => {
-  res.render("main"); // or home?
+router.get("/", (req, res) => {
+  res.render("home"); // or home?
 });
 
-app.get("/saved", (req, res) => {
+router.get("/saved", (req, res) => {
 	res.render("saved");
 });
 
-module.exports = app;
+module.exports = router;
